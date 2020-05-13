@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="second.css" />
+  </head>
+  <style>
+    span[class^="rot"]:not([char]):before {
+      content: "\27b7";
+    }
+    span[class^="rot"][char]:before {
+      content: attr(char);
+    }
+    span[class^="rot"] {
+      position: relative;
+    }
+    span[class^="rot"]:before {
+      position: relative;
+      display: inline-block;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 16px;
+      font-family: Tahoma, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      width: 16px;
+      height: 16px;
+    }
+    .rot-90:before {
+      transform: rotate(-90deg);
+    }
+    .rot90:before {
+      transform: rotate(90deg);
+    }
+    .rot45:before {
+      transform: rotate(45deg);
+    }
+    .rot-45:before {
+      transform: rotate(-45deg);
+    }
+    .rot180:before {
+      transform: rotate(180deg);
+    }
+  </style>
+
+  <body>
+    <p>
+      A long time <span class="rot90" style="color: green;"></span> ago in a
+      <span class="rot-45" char="G"></span>alax<span
+        class="rot180"
+        char="y"
+      ></span>
+      &nbsp; <span class="rot-90" char="F"></span>ar far a<span
+        class="rot45"
+        char="w"
+      ></span
+      >way
+    </p>
+  </body>
+</html>
